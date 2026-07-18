@@ -13,7 +13,7 @@ with the existing `mitsuho` (瑞穂 — food/agriculture, ADR-2605261015).
 Both Japanese characters can read "mizuho" in standard romanization.
 
 **Disambiguation**:
-- Filesystem: `20-actors/mizuho/` (this) vs `20-actors/mitsuho/` (food)
+- Repository: `com-etzhayyim-mizuho` (this) vs `com-etzhayyim-mitsuho` (food)
 - DID: `did:web:mizuho.etzhayyim.com` (this) vs `did:web:mitsuho.etzhayyim.com` (food)
 - Lexicon namespace: `com.etzhayyim.mizuho.*` (this) vs `com.etzhayyim.mitsuho.*` (food)
 
@@ -70,7 +70,7 @@ facilities.
 
 ## 6 Pregel Cells (R0 path-reserved)
 
-All cells path-reserved under `kotoba-lang/kotodama-cells/mizuho_*/`.
+All cells path-reserved under `40-engine/kotoba/crates/kotoba-kotodama/cells/mizuho_*/`.
 Cell modules created at R1 ratification, import-time
 `RuntimeError("mizuho R0 scaffold: activate via Council ADR + R1 ratification + water-source quality baseline established")`.
 
@@ -93,7 +93,8 @@ Cell modules created at R1 ratification, import-time
 | `waterContaminationIncident` | Anomaly / contamination event; severity enum; chigiri.disputeMediation routing if critical |
 | `silenMizuhoReview` | Quarterly Wellbecoming + closed-loop ratio + multi-gen consumption review |
 
-See `/00-contracts/lexicons/com/etzhayyim/mizuho/README.md`.
+Canonical definitions live in `data/lex/*.edn`; JSON transport snapshots are isolated
+under `wire/lex/`.
 
 ## Constitutional Gates (G1–G12)
 
@@ -120,13 +121,25 @@ See ADR-2605263100 §6.
 | **R2** | post-R1 + 30-day public + 3 site attestations | +3 cells + ≤500 households + ≤200 ha irrigation |
 | **R3** | post-R2 + Council Lv7+ + clinical-grade certification | +1 cell + ≤2,500 households + ≤25,000 cumulative + L4 Care Tier clinical-grade dispatch |
 
-## Related Files
+## Standalone layout and verification
 
-- `/20-actors/mizuho/manifest.jsonld`
-- `/20-actors/mizuho/CLAUDE.md`
-- `/00-contracts/lexicons/com/etzhayyim/mizuho/` (5 Lexicons + README)
+- `manifest.edn` — canonical actor manifest
+- `src/mizuho/{methods,cells}` — canonical CLJC implementation
+- `data/lex/*.edn` — canonical lexicons
+- `wire/` — JSON/JSON-LD interoperability snapshots only
+- `test/mizuho/` — complete regression and charter suite
+
+```sh
+bb test
+bb audit
+```
+
+Deprecated Python, Go/TinyGo, and shell runners are not part of this repository and
+are rejected by the audit.
+
+## Related ADRs
+
 - `/90-docs/adr/2605263100-mizuho-water-sanitation-tier-b-actor-r0.md` — Master ADR
 - `/90-docs/adr/2605192245-etzhayyim-global-land-sovereignty.md` — G11 source
 - `/90-docs/adr/2605263000-iyashi-clinical-care-provider-tier-b-actor-r0.md` — cross-actor clinical
 - `/CHARTER-RIDER.md` §2(e) + §2(c) + §1.13 — G4 + G5 sources
-- `/CLAUDE.md` — Status table row 71

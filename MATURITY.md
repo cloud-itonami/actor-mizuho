@@ -5,9 +5,11 @@
 
 | Dimension | State |
 |---|---|
-| Lexicons | ✅ 5 under `com.etzhayyim.mizuho.*` (waterSupplySourceRegistry/waterQuality/wastewaterDischarge/waterContaminationIncident/silenMizuhoReview) |
-| Manifest | ✅ `constitutionalGates` (G1–G12) |
-| Tests | ✅ `methods/test_charter_gates.cljc` — **7 tests, green** (2026-06-17) |
+| Lexicons | ✅ 5 canonical EDN under `data/lex`; JSON snapshots isolated under `wire/lex` |
+| Manifest | ✅ canonical `manifest.edn`, gates G1–G12 |
+| Runtime | ✅ standalone CLJC under `src/mizuho`; Python/Go/TinyGo pruned |
+| Tests | ✅ `bb test` — **39 tests / 181 assertions / 0 failures** (2026-07-18) |
+| Audit | ✅ EDN parse + wire boundary + deprecated-artifact audit |
 
 ## Gates pinned
 - G5 const bottledWaterUnitsDistributed=0 · G6 const fluoridationAdditionAttested=false.
@@ -16,4 +18,6 @@
 - G3 waterQuality requires whoLimit + overallComplianceStatus (non-compliant-critical-halt).
 - wastewater under jurisdictionalPermitCid + permitCompliant; contamination notifiedAtUtc + severity.
 
-> **2026-06-17 substrate-native migration (ADR-2606160842):** the charter-gate test above was ported Python→Clojure (`methods/test_charter_gates.py` → `methods/test_charter_gates.cljc`, ns `mizuho.methods.test-charter-gates`, reads the lexicons via cheshire/edn) and the Python was pruned. Run via `./run_tests.sh` (now `exec bb`) or `bb run test:charter` (all 34 charter suites; 244 tests / 924 assertions green). Assertions unchanged (1:1 port).
+> **2026-07-18 standalone migration:** the actor-owned implementation and contracts were
+> removed from monorepo path assumptions. Lexicons are now EDN canonical, wire JSON is
+> isolated, and Python subprocess parity was replaced by deterministic CLJC invariant tests.

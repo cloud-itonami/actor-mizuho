@@ -2,7 +2,7 @@
 
 Deterministic, stdlib-only control loops behind the `water_supply` cell. They
 compose the shared infra-robotics substrate in
-`20-actors/kuni-umi/robotics/` (re-exported via `_substrate.py`); no network, no
+`orgs/etzhayyim/com-etzhayyim-kuni-umi/robotics/` (re-exported via `_substrate.py`); no network, no
 hardware, no live actuation. `cell.py .solve()` stays Council-gated — these
 modules are offline sim + dry-run only.
 
@@ -41,6 +41,6 @@ modules are offline sim + dry-run only.
 ## Run the tests
 
 ```bash
-cd 20-actors/mizuho/methods
+cd src/mizuho/methods
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m pytest -q
 ```

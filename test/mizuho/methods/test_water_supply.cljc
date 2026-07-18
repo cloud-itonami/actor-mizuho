@@ -1,8 +1,8 @@
 (ns mizuho.methods.test-water-supply
-  "Tests for mizuho water-supply operational loop (methods/water_supply.cljc).
+  "Tests for mizuho water-supply operational loop (src/mizuho/methods/water_supply.cljc).
   1:1 port of methods/test_water_supply.py.
 
-    bb --classpath 20-actors -e \"(require 'mizuho.methods.test-water-supply 'clojure.test) \\
+    bb test
        (clojure.test/run-tests 'mizuho.methods.test-water-supply)\""
   (:require [clojure.test :refer [deftest is]]
             [mizuho.methods.substrate :as sub]

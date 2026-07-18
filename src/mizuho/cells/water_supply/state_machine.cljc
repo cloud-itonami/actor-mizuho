@@ -3,7 +3,7 @@
   1:1 port of cells/water_supply/state_machine.py.
 
   Pure, deterministic transitions enforcing mizuho gates. The runnable control loops
-  live in ../../methods/water-supply.cljc (level/pressure) and ../../methods/chlorination.cljc
+  live in src/mizuho/methods/water-supply.cljc (level/pressure) and src/mizuho/methods/chlorination.cljc
   (residual dosing); this wires them into a phase machine that ends at a member-signed,
   dry-run supply record (G6/G10/G12). cell.py .solve() stays Council-gated — these
   transitions are exercised by tests, not live actuation.
@@ -67,9 +67,9 @@
                 :agent dosing-agent
                 :per-member-consent per-member-consent)
         cs (assoc cs
-                  "level_restored" (get supply "level_restored")
-                  "residual_held" (get dosing "residual_held")
-                  "ceiling_respected" (get dosing "ceiling_respected")
+                  "level_restored" (:level-restored supply)
+                  "residual_held" (:residual-held dosing)
+                  "ceiling_respected" (:ceiling-respected dosing)
                   "payload" (assoc (get cs "payload")
                                    "supply" (ws/to-datoms supply (get cs "source_id"))
                                    "dosing" (chl/to-datoms dosing (get cs "source_id")))

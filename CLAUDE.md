@@ -1,4 +1,4 @@
-# 20-actors/mizuho — CLAUDE.md
+# com-etzhayyim-mizuho — CLAUDE.md
 
 ## Identity
 
@@ -76,8 +76,8 @@ context determines which actor:
 - Water + sanitation = `mizuho` (water = water-related infrastructure context)
 - Food + agriculture = `mitsuho` (food, harvest, crop context)
 
-If ambiguous, prefer full path: `20-actors/mizuho/` vs
-`20-actors/mitsuho/` OR DID: `did:web:mizuho.etzhayyim.com` vs
+If ambiguous, prefer repository name: `com-etzhayyim-mizuho` vs
+`com-etzhayyim-mitsuho` OR DID: `did:web:mizuho.etzhayyim.com` vs
 `did:web:mitsuho.etzhayyim.com`.
 
 A future renaming wave (if Council Lv6+ approves) might change one
@@ -108,24 +108,25 @@ R2 adds stormwater / greywater / irrigation (mitsuho pair) cells.
 
 R3 adds clinical_grade_water_supply (L4 Care Tier triad).
 
-## Build & Deploy
+## Verify
 
-**R0 status**: Scaffold only. R0 cells RuntimeError on import.
-
-R1 smoke test (when cells created):
-```bash
-cd kotoba-lang/kotodama-py
-python -c "from kotodama.cells.mizuho_potable_water_supply import _r0_marker" 2>&1 | grep "R0 scaffold"
+```sh
+bb test
+bb audit
 ```
+
+CLJC is the only canonical operational runtime. `data/lex/*.edn` is canonical;
+JSON/JSON-LD exists only under `wire/`. Python, Go/TinyGo, and shell test runners are
+deprecated and forbidden by the audit.
 
 ## Related Files
 
-- `/20-actors/mizuho/manifest.jsonld`
-- `/20-actors/mizuho/README.md`
-- `/00-contracts/lexicons/com/etzhayyim/mizuho/` (5 Lexicons + README)
+- `manifest.edn`
+- `README.md`
+- `data/lex/` (5 canonical EDN Lexicons)
+- `wire/lex/` (5 JSON interoperability snapshots + README)
 - `/90-docs/adr/2605263100-mizuho-water-sanitation-tier-b-actor-r0.md`
 - `/90-docs/adr/2605192245-etzhayyim-global-land-sovereignty.md` — G11
 - `/90-docs/adr/2605261015-mitsuho-food-agriculture-tier-b-actor-r0.md` — naming-collision sibling
 - `/90-docs/adr/2605263000-iyashi-clinical-care-provider-tier-b-actor-r0.md` — cross-actor clinical-grade
 - `/CHARTER-RIDER.md` §2(e) + §2(c) + §1.13 — G4 + G5 sources
-- `/CLAUDE.md` — Status table row 71

@@ -1,8 +1,8 @@
 (ns mizuho.methods.test-chlorination
   "Tests for mizuho residual-dosing (chlorination) operational loop
-  (methods/chlorination.cljc). 1:1 port of methods/test_chlorination.py.
+  (src/mizuho/methods/chlorination.cljc). 1:1 port of methods/test_chlorination.py.
 
-    bb --classpath 20-actors -e \"(require 'mizuho.methods.test-chlorination 'clojure.test) \\
+    bb test
        (clojure.test/run-tests 'mizuho.methods.test-chlorination)\""
   (:require [clojure.test :refer [deftest is]]
             [mizuho.methods.substrate :as sub]
