@@ -1,5 +1,10 @@
 # mizuho (水穂) — Non-profit Religious-Corp Water + Sanitation Substrate
 
+Canonical repository: `cloud-itonami/actor-mizuho`. This governed, resident
+water-and-sanitation actor belongs to the Itonami public-operations plane. It
+owns bounded community water operations and attestations; Tamaki separately
+owns artificial-organism evolution.
+
 **DID**: `did:web:mizuho.etzhayyim.com`
 **Namespace**: `com.etzhayyim.mizuho.*`
 **ADR**: ADR-2605263100 (R0 scaffold)
