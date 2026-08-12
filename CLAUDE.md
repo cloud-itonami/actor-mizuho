@@ -1,4 +1,7 @@
-# com-etzhayyim-mizuho — CLAUDE.md
+# cloud-itonami/actor-mizuho — CLAUDE.md
+
+Canonical repository: `https://github.com/cloud-itonami/actor-mizuho`.
+The former `etzhayyim/com-etzhayyim-mizuho` path is a compatibility redirect.
 
 ## Identity
 
