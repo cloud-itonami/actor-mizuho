@@ -21,7 +21,7 @@
   `simulate` can drive them imperatively exactly like the Python loop.
 
   Omits the Python __main__ demo (there is none for the substrate)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; ── SafetyError ────────────────────────────────────────────────────────────────
 ;; Python: class SafetyError(Exception). We model it as an ex-info-tagged exception
