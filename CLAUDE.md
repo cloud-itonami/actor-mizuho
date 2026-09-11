@@ -114,8 +114,8 @@ R3 adds clinical_grade_water_supply (L4 Care Tier triad).
 ## Verify
 
 ```sh
-bb test
-bb audit
+kbb -M:test
+kbb -M:audit
 ```
 
 CLJC is the only canonical operational runtime. `data/lex/*.edn` is canonical;
