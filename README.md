@@ -135,8 +135,8 @@ See ADR-2605263100 §6.
 - `test/mizuho/` — complete regression and charter suite
 
 ```sh
-bb test
-bb audit
+kbb -M:test
+kbb -M:audit
 ```
 
 Deprecated Python, Go/TinyGo, and shell runners are not part of this repository and

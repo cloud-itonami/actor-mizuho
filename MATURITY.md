@@ -8,7 +8,7 @@
 | Lexicons | ✅ 5 canonical EDN under `data/lex`; JSON snapshots isolated under `wire/lex` |
 | Manifest | ✅ canonical `manifest.edn`, gates G1–G12 |
 | Runtime | ✅ standalone CLJC under `src/mizuho`; Python/Go/TinyGo pruned |
-| Tests | ✅ `bb test` — **39 tests / 181 assertions / 0 failures** (2026-07-18) |
+| Tests | ✅ `kbb -M:test` — **39 tests / 181 assertions / 0 failures** (2026-07-18) |
 | Audit | ✅ EDN parse + wire boundary + deprecated-artifact audit |
 
 ## Gates pinned
