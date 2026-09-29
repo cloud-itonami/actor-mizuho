@@ -32,5 +32,5 @@ Schemas at R0 are skeleton-level; full structural enforcement at R1.
 
 - `/20-actors/mizuho/manifest.jsonld`
 - `/20-actors/mizuho/README.md`
-- `/20-actors/mizuho/CLAUDE.md`
+- `/20-actors/mizuho/AGENTS.md`
 - `/90-docs/adr/2605263100-mizuho-water-sanitation-tier-b-actor-r0.md`
